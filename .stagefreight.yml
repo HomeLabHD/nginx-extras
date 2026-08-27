@@ -1,0 +1,93 @@
+# ------------------------------------------------------------------------------
+# GENERATED / ENFORCED BY STAGEFREIGHT GOVERNANCE
+# Source repo: PrPlanIT/MaintenancePolicy
+# Source ref: 814d185bc7dd335963b721170a179791bce141fc
+# Profile: hlhd-docker
+# This .stagefreight.yml is governed, not purely local.
+# To disable governance, detach from the control repo workflow.
+# Manual changes may be overwritten by reconciliation.
+# ------------------------------------------------------------------------------
+
+version: 1
+builds:
+  preset: preset/build-docker.yml
+scribe:
+  preset: preset/scribe-docker.yml
+lint:
+  preset: preset/lint-generic.yml
+security:
+  preset: preset/security.yml
+dependency:
+  preset: preset/dependency.yml
+commit:
+  preset: preset/commit.yml
+release:
+  preset: preset/release.yml
+manifest:
+  preset: preset/manifest.yml
+build_cache:
+  preset: preset/build_cache.yml
+ci:
+  image: docker.cr.pcfae.com/prplanit/stagefreight:latest-dev
+forges:
+  preset: preset/forges.yml
+git:
+  preset: preset/git.yml
+metadata:
+  category: infrastructure
+  description:
+    - NGINX on Alpine with the extras module set compiled in.
+    - Alpine-based NGINX image with dynamic modules for headers-more, brotli, geoip2, and echo, plus a private health endpoint, Cloudflare real-client-IP refresh at startup, and strict TLS defaults with HSTS enabled.
+  license: GPL-3.0
+  org: HomeLabHD
+  title: NGINX Extras
+  topics:
+    - nginx
+    - alpine
+    - reverse-proxy
+    - brotli
+    - geoip2
+    - tls
+orgs:
+  HomeLabHD:
+    aliases:
+      docker: hlhd
+      ghcr: homelabhd
+      github: HomeLabHD
+      handle: hlhd
+    maintainer: HomeLabHD <homelabhelp@gmail.com>
+preset_source:
+  cache_policy: authoritative
+  project_id: PrPlanIT/MaintenancePolicy
+  provider: gitlab
+  ref: 814d185bc7dd335963b721170a179791bce141fc
+  repo_url: https://gitlab.prplanit.com
+publish:
+  preset: preset/publish-docker.yml
+registries:
+  preset: preset/registries.yml
+repos:
+  github-mirror:
+    forge: github
+    project: HomeLabHD/nginx-extras
+    roles:
+      - mirror
+      - publish-origin
+    sync:
+      git: true
+      releases: true
+  primary:
+    branches:
+      default: main
+    forge: gitlab
+    project: HomeLabHD/nginx-extras
+    roles:
+      - primary
+    worktree: .
+stencils:
+  presets:
+    - preset/stencils-base.yml
+    - preset/stencils-status.yml
+    - preset/stencils-docker.yml
+toolchains:
+  preset: preset/toolchains.yml
