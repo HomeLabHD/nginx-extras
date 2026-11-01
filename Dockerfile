@@ -5,7 +5,7 @@ LABEL maintainer="SoFMeRight <sofmeright@gmail.com>" \
       org.opencontainers.image.title="nginx-extras-oci" \
       description="NGINX with extras, alpine base, with a default nginx.conf & healthcheck endpoint." \
       org.opencontainers.image.description="NGINX with extras, alpine base, with a default nginx.conf & healthcheck endpoint." \
-      org.opencontainers.image.source="https://gitlab.prplanit.com/precisionplanit/nginx-extras-oci.git" \
+      org.opencontainers.image.source="https://git.optcp.com/precisionplanit/nginx-extras-oci.git" \
       org.opencontainers.image.licenses="GPL-3.0"
 
 # Core + dynamic modules we want available

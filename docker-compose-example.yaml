@@ -8,7 +8,7 @@
 # - An IaC friendly alpine based build of nginx.
 #
 # DockerHub: https://hub.docker.com/r/prplanit/nginx-extras-oci
-# GitLab: https://gitlab.prplanit.com/precisionplanit/nginx-extras-oci
+# GitLab: https://git.optcp.com/precisionplanit/nginx-extras-oci
 # Docker Pulls: `prplanit/nginx-extras-oci:latest`
 # 
 # © 2025 ~ AntParade / HomelabHelpDesk / PrecisionPlanIT / SoFMeRight
