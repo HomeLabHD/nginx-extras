@@ -106,7 +106,7 @@ upstream:
       pins:
         - arg: NGINX_VERSION
           file: Dockerfile
-      suite: v3.24/main
+      repository: main
   version:
     since: v1.30.6
     track: nginx
