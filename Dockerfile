@@ -1,5 +1,7 @@
 # syntax=docker/dockerfile:1.7
-FROM alpine:3.22.8
+FROM alpine:3.24.4
+
+ARG NGINX_VERSION=1.30.6-r0
 
 LABEL maintainer="SoFMeRight <sofmeright@gmail.com>" \
       org.opencontainers.image.title="nginx-extras-oci" \
@@ -10,11 +12,11 @@ LABEL maintainer="SoFMeRight <sofmeright@gmail.com>" \
 
 # Core + dynamic modules we want available
 RUN apk add --no-cache \
-      nginx ca-certificates curl tzdata openssl \
-      nginx-mod-http-brotli \
-      nginx-mod-http-echo \
-      nginx-mod-http-geoip2 \
-      nginx-mod-http-headers-more
+      nginx=${NGINX_VERSION} ca-certificates curl tzdata openssl \
+      nginx-mod-http-brotli=${NGINX_VERSION} \
+      nginx-mod-http-echo=${NGINX_VERSION} \
+      nginx-mod-http-geoip2=${NGINX_VERSION} \
+      nginx-mod-http-headers-more=${NGINX_VERSION}
 
 # Directories we use at runtime
 RUN mkdir -p /etc/nginx/modules.d /etc/nginx/_internal /etc/nginx/cf /etc/nginx/ssl
