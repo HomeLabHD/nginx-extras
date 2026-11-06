@@ -79,6 +79,11 @@ repos:
     roles:
       - primary
     worktree: .
+schedules:
+  upstream-refresh:
+    build: changes
+    cron: H H * * *
+    reason: Daily watch of Alpine's nginx; move to its new release.
 stencils:
   presets:
     - https://git.optcp.com/PrPlanIT/MaintenancePolicy//preset/stencils-base.yml
@@ -89,3 +94,19 @@ toolchains:
   want:
     presets:
       - https://git.optcp.com/PrPlanIT/MaintenancePolicy//preset/toolchains-scanners.yml
+upstream:
+  evidence:
+    image:
+      probe:
+        manager: apk
+        package: nginx
+  sources:
+    nginx:
+      apk: nginx
+      pins:
+        - arg: NGINX_VERSION
+          file: Dockerfile
+      suite: v3.24/main
+  version:
+    since: v1.30.6
+    track: nginx
