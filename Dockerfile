@@ -1,6 +1,7 @@
 # syntax=docker/dockerfile:1.7
 FROM alpine:3.24.4
 
+# renovate: datasource=apk depName=nginx
 ARG NGINX_VERSION=1.30.6-r0
 
 LABEL maintainer="SoFMeRight <sofmeright@gmail.com>" \
