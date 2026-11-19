@@ -94,9 +94,8 @@ toolchains:
 upstream:
   evidence:
     image:
-      probe:
-        manager: apk
-        package: nginx
+      manager: apk
+      package: nginx
   sources:
     nginx:
       apk: nginx
