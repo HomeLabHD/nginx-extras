@@ -39,7 +39,6 @@ metadata:
   description:
     - NGINX on Alpine with the extras module set compiled in.
     - Alpine-based NGINX image with dynamic modules for headers-more, brotli, geoip2, and echo, plus a private health endpoint, Cloudflare real-client-IP refresh at startup, and strict TLS defaults with HSTS enabled.
-  license: GPL-3.0
   org: HomeLabHD
   title: NGINX Extras
   topics:
@@ -92,17 +91,6 @@ toolchains:
     presets:
       - https://git.optcp.com/PrPlanIT/MaintenancePolicy//preset/toolchains-scanners.yml
 upstream:
-  evidence:
-    image:
-      manager: apk
-      package: nginx
-  sources:
-    nginx:
-      apk: nginx
-      pins:
-        - arg: NGINX_VERSION
-          file: Dockerfile
-      repository: main
   version:
     since: v1.30.6
     track: nginx
